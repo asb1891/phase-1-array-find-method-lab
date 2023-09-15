@@ -73,3 +73,16 @@ expect(superbowlWin(record)).to.equal('2015');
     expect(superbowlWin(sadReality)).to.equal(undefined)
   });
 });
+
+function superbowlWin(record) {
+  // Find the first win object for the Denver Broncos
+  const win = record.find(item => item.result === "W");
+
+  // If a win object is found, return the year of the win
+  if (win) {
+    return win.year;
+  }
+
+  // If no win object is found, return undefined
+  return undefined;
+};
